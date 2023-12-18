@@ -111,4 +111,19 @@ export class HelpService {
     toastr.showErrorCustom(language.appointmentIsNotStillAvailable);
     this.messageService.sentDialogForNewTermine();
   }
+
+  checkMenuType() {
+    if (window.innerWidth > 992) {
+      return 'vertical-menu-modern';
+    } else {
+      return 'vertical-overlay-menu';
+    }
+  }
+
+  setLocalStorage(key: string, value: any) {
+    localStorage.setItem(
+      key,
+      typeof value === 'string' ? value : JSON.stringify(value)
+    );
+  }
 }

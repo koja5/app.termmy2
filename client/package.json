@@ -32,6 +32,7 @@
     "bootstrap": "^5.2.3",
     "crypto-js": "^4.2.0",
     "moment": "^2.29.4",
+    "ngx-cookie-service": "^17.0.1",
     "ngx-toastr": "^17.0.2",
     "rxjs": "~7.8.0",
     "stripe-angular": "^1.9.3",
