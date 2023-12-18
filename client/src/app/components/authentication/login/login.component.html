@@ -1,0 +1,159 @@
+<body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="click"
+    data-menu="vertical-menu-modern" data-col="blank-page">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <div class="auth-wrapper auth-cover">
+                    <div class="auth-inner row m-0">
+                        <!-- Brand logo--><a class="brand-logo" href="index.html">
+                            
+                            <img class="logo" src="../../../../assets/images/logo.svg">
+                        </a>
+                        <!-- /Brand logo-->
+                        <!-- Left Text-->
+                        <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
+                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img
+                                    class="img-fluid" src="../../../../assets/images/auth/login-v2.svg"
+                                    alt="Login V2" /></div>
+                        </div>
+                        <!-- /Left Text-->
+                        <!-- Login-->
+                        <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
+                            <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+                                <h2 class="card-title fw-bold mb-1">Welcome to CalendarNode! 👋</h2>
+                                <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
+                                <form class="auth-login-form mt-2" [formGroup]="data">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="login-email">Email</label>
+                                        <input class="form-control" id="login-email" type="text" name="login-email"
+                                            placeholder="john@example.com" aria-describedby="login-email" autofocus=""
+                                            tabindex="1" formControlName="email" />
+                                        <span class="text-danger"
+                                            *ngIf="dataControl.email.touched && dataControl.email.errors?.required">
+                                            Moraaaa
+                                        </span>
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-label" for="login-password">Password</label><a
+                                                routerLink="../forgot-password"><small>Forgot
+                                                    Password?</small></a>
+                                        </div>
+                                        <div class="input-group input-group-merge form-password-toggle">
+                                            <input class="form-control form-control-merge" id="login-password"
+                                                type="{{!passwordVisible ? 'password' : 'text'}}" name="login-password"
+                                                placeholder="············" aria-describedby="login-password"
+                                                tabindex="2" formControlName="password" /><span
+                                                class="input-group-text cursor-pointer"
+                                                (click)="passwordVisible = !passwordVisible"><i
+                                                    class="fa fa-{{!passwordVisible ? 'eye' : 'eye-slash'}}"></i></span>
+
+                                        </div>
+                                        <span class="text-danger"
+                                            *ngIf="dataControl.password.touched && dataControl.password.errors?.required">
+                                            Moraaaa
+                                        </span>
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" id="remember-me" type="checkbox"
+                                                tabindex="3" />
+                                            <label class="form-check-label" for="remember-me"> Remember Me</label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary w-100" tabindex="4" (click)="login()">Sign
+                                        in</button>
+                                </form>
+                                <p class="text-center mt-2"><span>New on our platform?</span><a
+                                        routerLink="../sign-up"><span>&nbsp;Create an account</span></a></p>
+                                <div class="divider my-2">
+                                    <div class="divider-text">or</div>
+                                </div>
+                                <!-- <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook"
+                                        href="#"><i class="fa fa-facebook"></i></a><a class="btn btn-twitter white"
+                                        href="#"><i class="fa fa-twitter"></i></a><a class="btn btn-google" href="#"><i
+                                            class="fa fa-envelope"></i></a><a class="btn btn-github" href="#"><i
+                                            class="fa fa-github"></i></a></div> -->
+
+                                <!-- <div class="block-wrap">
+                                    <div>
+                                        <a class="btn-google" href="">
+                                            <div class="google-content">
+                                                <div class="logo">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+                                                        <defs>
+                                                            <path id="a"
+                                                                d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z" />
+                                                        </defs>
+                                                        <clipPath id="b">
+                                                            <use xlink:href="#a" overflow="visible" />
+                                                        </clipPath>
+                                                        <path clip-path="url(#b)" fill="#FBBC05" d="M0 37V11l17 13z" />
+                                                        <path clip-path="url(#b)" fill="#EA4335"
+                                                            d="M0 11l17 13 7-6.1L48 14V0H0z" />
+                                                        <path clip-path="url(#b)" fill="#34A853"
+                                                            d="M0 37l30-23 7.9 1L48 0v48H0z" />
+                                                        <path clip-path="url(#b)" fill="#4285F4"
+                                                            d="M48 48L17 24l-4-3 35-10z" />
+                                                    </svg>
+                                                </div>
+                                                <p class="m-0">Sign in with Google</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="mt-2">
+                                        <a class="btn-fb" href="">
+                                            <div class="fb-content">
+                                                <div class="logo">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                        viewBox="0 0 32 32" version="1">
+                                                        <path fill="#FFFFFF"
+                                                            d="M32 30a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v28z" />
+                                                        <path fill="#4267b2"
+                                                            d="M22 32V20h4l1-5h-5v-2c0-2 1.002-3 3-3h2V5h-4c-3.675 0-6 2.881-6 7v3h-4v5h4v12h5z" />
+                                                    </svg>
+                                                </div>
+                                                <p class="m-0">Sign in with Facebook</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div> -->
+
+                                <div class="external-provider text-center">
+                                    <div class='sign-in-button google'>
+                                        <div class=content-wrapper>
+                                            <div class='logo-wrapper'>
+                                                <img src='../../../../assets/images/icons/google-icon.png'>
+                                            </div>
+                                            <span class='text-container'>
+                                                <span>Sign in with Google</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class='sign-in-button facebook'>
+                                        <div class=content-wrapper>
+                                            <div class='logo-wrapper'>
+                                                <img src='../../../../assets/images/icons/facebook.png'>
+                                            </div>
+                                            <span class='text-container'>
+                                                <span>Sign in with Facebook</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Login-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

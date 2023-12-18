@@ -1,0 +1,21 @@
+@import url("../../../assets/styles/vertical-menu.css");
+@import url("../../../assets/styles/bootstrap-extended.css");
+@import url("../../../assets/styles/colors.css");
+
+.navbar-nav {
+  align-items: center;
+  justify-content: space-between;
+  height: 55px;
+}
+
+.navbar-brand {
+  margin-top: 0px !important;
+}
+
+.nav-item .fa-dot-circle-o {
+  font-size: 19px;
+}
+
+.footer {
+  margin-left: 260px;
+}
